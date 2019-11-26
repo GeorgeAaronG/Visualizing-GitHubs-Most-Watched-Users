@@ -78,7 +78,7 @@ lang <- table(ausersubset$language)
 lang <- data.frame(lang)
 order(lang$Freq)
 lang[order(-lang$Freq),]
-barplot(lang$Freq,  names.arg = lang$language, main="Histogram for Language", xlab="Language", ylab="Frequency")
+barplot(lang$Freq,  names.arg = lang$Var1, main="Histogram for Language", xlab="Language", ylab="Frequency", cex.names = .8)
 
 
 #########################
@@ -88,7 +88,7 @@ a <- table(ausersubset$language)
 a <- as.data.frame(a)
 a <- a[with(a, order(-Freq)), ]
 colnames(a) <- c("Language","Count")
-barplot(toplang$Count,  names.arg = toplang$Language, main="Histogram for Language", xlab="Language", ylab="Frequency", las=2, cex.names=.8)
+barplot(a$Count,  names.arg = a$Language, main="Histogram for Language", xlab="Language", ylab="Frequency", las=2, cex.names=.8)
 
 
 
